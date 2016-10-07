@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+  body
+    #form-container1(style='width:500; margin:auto')
+        #login.center-vertical
+        
+        form.well( method='post')
+                h3 Register as a New User
+                h6 Please Enter your Account Information
+                if error
+                    #error-msg(style='width:460; margin: auto; padding:10; background-color:#f22; color:#fff')
+                        h4 #{error}
+                label UserName
+                input.form-control(type='text', id='username',placeholder='Your Name', name='username',class='form-control', required)
+               
+                label First Name
+                input.form-control(type='text', id='firstName', name='firstName', required)
+                
+                label Last Name
+                input.form-control(type='text', id='lastName', name='lastName', required)
+                
+                label Email 
+                input.form-control(type='text', id='email',placeholder='Your Email', name='email',class='form-control', required)
+                
+                label Password
+                input.form-control(type='password', id='password',placeholder='Password', name='password',class='form-control' ,required)
+               
+                button(type='submit').btn.btn-primary.button-sign-in
+                    | Register
+                .clearfix
+                    a(href='/index') Log in
+                    
+

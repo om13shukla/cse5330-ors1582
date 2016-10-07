@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  
+  body
+          #form-container1(style='width:400; margin:auto')
+            #login.center-vertical
+            form.well( method='post')
+                h2 Hello!
+                h6 Please Login To Your Account
+                if error
+                    #error-msg(style='width:360; margin: auto; padding:10; background-color:#f22; color:#fff')
+                        h4 #{error}       
+                label Username
+                input.form-control(type='text', id='username', name='username', required)
+                            
+                label Password
+                input.form-control(type='password', id='password', name='password',required)
+            
+                button(type='submit').btn.btn-primary.button-sign-in
+                    span.glyphicon.glyphicon-lock
+                    | Sign In
+                .clearfix
+                    hr
+                    .btm-links
+                        #forgot-password
+                            a(href='#') Forgot Your Password?
+                        #create-account
+                            a(href='/register') Create An Account
+                        .clearfix

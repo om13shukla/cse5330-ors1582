@@ -1,0 +1,95 @@
+{
+	"comments": [{
+		"id": 100,
+		"createdAt": "2014-08-28T05:39:59.554131Z",
+		"modifiedAt": "2014-08-28T05:39:59.554148Z",
+		"text": "My son and I love playing basketball at this school when the weather's nice. Don't forget to bring your own net!",
+		"objectId": 2034,
+		"links": {
+			"createdBy": 17,
+			"modifiedBy": 17,
+			"contentType": 66
+		}
+	}],
+	"links": {
+		"comments.createdBy": {
+			"href": "/api/common/v1/users/{id}",
+			"type": "users"
+		},
+		"createdBy.createdBy": {
+			"href": "/api/common/v1/users/{id}",
+			"type": "users"
+		},
+		"createdBy.modifiedBy": {
+			"href": "/api/common/v1/users/{id}",
+			"type": "users"
+		},
+		"createdBy.avatar": {
+			"href": "/api/common/v1/media/{id}",
+			"type": "medias"
+		},
+		"avatar.createdBy": {
+			"href": "/api/common/v1/users/{id}",
+			"type": "users"
+		},
+		"avatar.modifiedBy": {
+			"href": "/api/common/v1/users/{id}",
+			"type": "users"
+		},
+		"createdBy.coverPhoto": {
+			"href": "/api/common/v1/media/{id}",
+			"type": "medias"
+		},
+		"comments.modifiedBy": {
+			"href": "/api/common/v1/users/{id}",
+			"type": "users"
+		},
+		"comments.contentType": {
+			"href": "",
+			"type": "contentTypes"
+		}
+	},
+	"linked": {
+		"users": [{
+			"id": 17,
+			"createdAt": "2014-08-06T02:59:08.925249Z",
+			"modifiedAt": "2014-10-24T19:27:24.913096Z",
+			"firstName": "Grady",
+			"lastName": "Noonen",
+			"joinedAt": "2014-10-24T19:27:24.906408Z",
+			"bio": "Hello.",
+			"party": "",
+			"isActive": true,
+			"isSuperuser": true,
+			"lastLogin": "2016-09-29T17:26:38.357696Z",
+			"slug": "grady-noonen",
+			"isAnonymousUser": false,
+			"isStaff": true,
+			"lat": 32.734285,
+			"long": -97.115402,
+			"links": {
+				"createdBy": 2,
+				"modifiedBy": 2,
+				"avatar": 13068,
+				"coverPhoto": 13070
+			}
+		}],
+		"medias": [{
+			"id": 13068,
+			"createdAt": "2014-08-13T02:58:22.729623Z",
+			"modifiedAt": "2014-08-13T02:58:22.733006Z",
+			"description": "Profile Picture",
+			"url": "https://res.cloudinary.com/mindmixerprod/image/upload/v1407898702/20140813025822-f74cba52.gif",
+			"path": "20140813025822-f74cba52.gif",
+			"size": 12457,
+			"width": 540,
+			"height": 546,
+			"mediaType": "gif",
+			"links": {
+				"createdBy": 2,
+				"modifiedBy": 2
+			}
+		}]
+	},
+	"meta": {}
+}
