@@ -14,7 +14,7 @@ router.post('/', function (req, res) {
     // register using api to maintain clean separation between layers
     console.log(chalk.yellow("register-post happns  here --> calling userControl next"));
     request.post({
-        url: 'http://localhost:3000/api/users/register',
+        url: 'https://cse5335-ors1582.herokuapp.com/api/users/register',
         form: req.body,
         json: true
     }, function (error, response, body) {

@@ -9,6 +9,7 @@ var chalk = require('chalk');
 var session = require('express-session'); 
 var config=require('./config.json');
 
+
 //var validator = require('express-validator');
 
 
@@ -18,7 +19,7 @@ var home = require('./routes/home');
 var userService = require( './routes/userService');     //for practice
 
 var userControler= require('./routes/userControler');   //for practice
-var appController= require('./routes/appController');   //for practice
+var sendJSON= require('./routes/sendJSON');   //for sending json files.
 
 var app = express();
 
@@ -43,7 +44,8 @@ app.use('/index', index);
 
 app.use('/register', register);
 app.use('/', home);
-//app.use('/', appController);
+app.use('/jsonfiles', sendJSON);
+
 
 app.use('/api/users', userControler);
 
