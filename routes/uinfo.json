@@ -3,7 +3,7 @@
 		"id": 100,
 		"createdAt": "2014-08-28T05:39:59.554131Z",
 		"modifiedAt": "2014-08-28T05:39:59.554148Z",
-		"text": "My son and I love playing basketball at this school when the weather's nice. Don't forget to bring your own net!",
+		"text": "This was fun..!",
 		"objectId": 2034,
 		"links": {
 			"createdBy": 17,
@@ -11,44 +11,7 @@
 			"contentType": 66
 		}
 	}],
-	"links": {
-		"comments.createdBy": {
-			"href": "/api/common/v1/users/{id}",
-			"type": "users"
-		},
-		"createdBy.createdBy": {
-			"href": "/api/common/v1/users/{id}",
-			"type": "users"
-		},
-		"createdBy.modifiedBy": {
-			"href": "/api/common/v1/users/{id}",
-			"type": "users"
-		},
-		"createdBy.avatar": {
-			"href": "/api/common/v1/media/{id}",
-			"type": "medias"
-		},
-		"avatar.createdBy": {
-			"href": "/api/common/v1/users/{id}",
-			"type": "users"
-		},
-		"avatar.modifiedBy": {
-			"href": "/api/common/v1/users/{id}",
-			"type": "users"
-		},
-		"createdBy.coverPhoto": {
-			"href": "/api/common/v1/media/{id}",
-			"type": "medias"
-		},
-		"comments.modifiedBy": {
-			"href": "/api/common/v1/users/{id}",
-			"type": "users"
-		},
-		"comments.contentType": {
-			"href": "",
-			"type": "contentTypes"
-		}
-	},
+	
 	"linked": {
 		"users": [{
 			"id": 17,

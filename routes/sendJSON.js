@@ -8,7 +8,7 @@ var chartData= require('./chartData.json')
 
 /* GET home page. */
 router.get('/frndsinfo.json', function(req, res, next) {
-    console.log(chalk.red("in get() in sendJSON.js - sending json file"));
+    console.log(chalk.red("in get() in sendJSON.js - sending frndsinfo.json file"));
     
     res.contentType('application/json');
 
@@ -18,7 +18,7 @@ router.get('/frndsinfo.json', function(req, res, next) {
 });
 
 router.get('/userinfo.json', function(req, res, next) {
-    console.log(chalk.red("in get() in sendJSON.js - sending json file"));
+    console.log(chalk.red("in get() in sendJSON.js - sending uinfo.json file"));
     
     res.contentType('application/json');    
 
@@ -28,7 +28,8 @@ router.get('/userinfo.json', function(req, res, next) {
 });
 
 router.get('/chartData.json', function(req, res, next) {
-    console.log(chalk.red("in get() in sendJSON.js - sending json file"));
+    
+    console.log(chalk.red("in get() in sendJSON.js - sending charData.json file"));
     
     res.contentType('application/json');    
 
