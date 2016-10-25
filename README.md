@@ -1,11 +1,11 @@
 # CSE5335-ors1582
 ## All Objectives are met.
-   1.a - Hosted a Web Page on Heroku.
-   1.b - AngularJS for Dynamically modifying the contents of Page.
-   1.c - RESTful API calls to the server NodeJS from AngularJS app at client side.
-   2   - Chose AngularJS as a client side javascript framework for manupilating DOM and Performing AJAX style calls.
-   3   - Proper Display of the JSON data fethced from the server using IMG, DIV, and TABLE tag.
-        For Extra credit both Google map with plotted points and Charts are added to the page.
+   **1.a** - Hosted a Web Page on Heroku.  
+   **1.b** - AngularJS for Dynamically modifying the contents of Page.  
+   **1.c** - RESTful API calls to the server NodeJS from AngularJS app at client side.  
+   **2**   - Chose AngularJS as a client side javascript framework for manupilating DOM and Performing AJAX style calls.  
+   **3**   - Proper Display of the JSON data fethced from the server using IMG, DIV, and TABLE tag.  
+        *For Extra credit both Google map with plotted points and Charts are added to the page.*  
 ## Qestionnaire :
 
   1. What server framework did you choose and why?  
