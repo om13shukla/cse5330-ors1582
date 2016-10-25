@@ -8,11 +8,11 @@
         For Extra credit both Google map with plotted points and Charts are added to the page.
 ## Qestionnaire :
 
-  1. What server framework did you choose and why?
-     The Web page is created using NODE.JS server framework, Because Given the requirements of the Project being single page,
-     Node.js seemed good choice.
+  1. What server framework did you choose and why?  
+          ==>The Web page is created using NODE.JS server framework, Because Given the requirements of the Project being single page,
+             Node.js seemed good choice.
      
-  2.What client framework did you choose and why?
-     Angular.JS is the client Framework used in this project. Manipulating DOM and making AJAX style calls can be done in Angular very          easily, Especially the two way binding of elements to the data was main driving reason to select Angular.JS
+  2.What client framework did you choose and why?  
+        ==>Angular.JS is the client Framework used in this project. Manipulating DOM and making AJAX style calls can be done in Angular         very easily, Especially the two way binding of elements to the data was main driving reason to select Angular.JS
   3.
     
