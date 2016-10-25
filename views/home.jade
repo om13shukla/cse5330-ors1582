@@ -6,14 +6,15 @@ body
         link(rel= 'stylesheet',href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') 
         #leabel-head(style='top: 5% solid #add; margin-bottom: auto; z-index:1 ;padding: 2%; background: #adf')
             h1 Web Data Management
-            p NodeJS with ExpressJS middleware and AngularJS app front.
+            p NodeJS with ExpressJS middleware and AngularJS app front. 
+            p Oblectives- 1.a : Hosting a Web Page on Herku.| 1.b : Angular.JS to dynamically modify the Page.| 1.c : Using Node.JS at the server side.
         #container(style='padding: 2%; margin:10%;')
             
             div(ng-controller="myCtrl1")
-                h3 Welcome
-                p   Check out my first Post here..
+                h3(style="color:#888") Welcome
+                p   These Sections take Care of Objective 2 and 3.
                 button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
-                    | Http.Get()
+                    | Objective-3
                     .clearfix
                 br
                 br
@@ -21,23 +22,71 @@ body
                 lable Check this to Show raw JSON recevied from Server.
                                
                 div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px")
-                    h4 {{ujson}} 
-                    h4 {{preMsg}}  
+                    p(style="overflow: auto;")    
+                        h4 {{ujson}} 
+                        h4 {{preMsg}}  
                 
                 br
                 br
-                                    
-                
-            
+                div(style="background:#ffa;border-bottom:8px solid #dda;padding:2%" ng-show="details")
+                    div(ng-model="ujson")
+                        div(style="border-bottom:3px solid #ddd")
+                            h5 This JSON File is About: {{ujson.about}}
+                        div(style="border-bottom:3px solid #ddd" )
+                            h5 The user with ID: {{ujson.comments[0].id}} , Commented that: " {{ujson.comments[0].text}} "  on {{ujson.comments[0].createdAt | date:"MM/dd/yyyy 'at' h:mma"}}
+                        div(style="border-bottom:3px solid #ddd" )
+                            img(style='width:15%;height:20%;align:center; border:4px solid #aaa;background:#ccd' src="{{ujson.linked.medias[0].url}}")
+                            h5 The User ID:{{ujson.comments[0].id}} , Commented on this Profile of user {{ujson.linked.users[0].firstName}} {{ujson.linked.users[0].lastName}} with ID: {{ujson.linked.users[0].id}} 
+                            h5 This user is {{active}}, with last login on {{ujson.linked.users[0].lastLogin | date:"MM/dd/yyyy 'at' h:mma"}} 
+                              
+                        
+                        
+                        
             div(ng-controller="myCtrl2")
-                
-                p   Check out my first Post here..
+                h3(style="color:#888") An Example of Complex JSON with Charts and Maps
                 button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
-                    | Http.Get()
+                    | Extra Credit!
                     .clearfix
+                br
+                br
+                input(type="checkbox" ng-model="showRaw")
+                lable Check this to Show raw JSON recevied from Server.
+                               
+                div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px")
+                    div(style="word-wrap:break-word;")    
+                        h4 {{longj}} 
+                        h4 {{preMsg}}  
                 
+                br
+                br
+                div(style="padding:2%" ng-show="details")
+                    div(ng-repeat=" e in longj")
+                        div(style="background:#ddd;padding:2%;border-bottom:3px solid #fff; float:left; width:50%")
+                            h4(align="center") {{e.name}}
+                            h5 ID: {{e._id}}
+                            h5 Start Date: {{e.registered | date:"MM/dd/yyyy 'at' h:mma"}}
+                            h5 Salary {{e.balance}}
+                            h5 E-mail: {{e.email}}
+                            h5 Phone: {{e.phone}}
+                            h5 Adress: {{e.address}}
+                            h5 Age: {{e.age}}
+                            h5 Gender: {{e.gender}} 
+                    br(style="clear:left")
+                    br
+                    br
+                    h4 Following are the Office Locations of Employees Above.
+                    ui-gmap-google-map( center='map.center' zoom='map.zoom')
+                        span(ng-repeat="x in longj")
+                            ui-gmap-marker(idKey="markers.id" coords="x.coords" options="x.name")
                     
+                    
+            div(ng-controller="myCtrl3" style="position:relative")
                 
+                h3(style="color:#888") Comparing Table Formats Created using DIV and TABLE tags.
+                
+                button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
+                    | Objective-3
+                    .clearfix
                 br
                 br
                 input(type="checkbox" ng-model="showRaw")
@@ -45,52 +94,66 @@ body
                 
                
                 div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px")
-                    h4 {{msg}} 
-                    h4 {{preMsg}}  
-                
+                    p(style="overflow: hidden;")    
+                        h4 {{msg}} 
+                        h4 {{preMsg}}  
                 br
                 br
                 
-                h3(style="color:#888") Displaying table using <div> tags.
-                br
-                #t-div(style="background:#ddf;margin-right:40%")
-                    #th-div(style="background:#ddf;border-bottom:8px solid #aaf; padding: 5px")
-                        h4 {{msg.chart.caption}}
-                        h6 {{msg.chart.subCaption}}
-                    #tr-div(style='width=60;margin=20%;background:#ddf;padding:5px;border-bottom:1px solid #888')
-                        #td-div(ng-repeat="x in msg.data")
-                            span {{x.label}} {{x.value}}
                 
-                br
-                                    
-                h3(style="color:#888") Displaying table using <table> tags.
-                br
-                br
-                table(style="background:#ddf; border:3px solid #aaf; padding:5px")
-                    tr()
-                        th(style="border:1px solid #888;padding: 5px")  
-                            {{msg.data[0].th1}} 
-                        th(style="border:1px solid #888;padding: 5px")  
-                            {{msg.data[0].th2}}
-                    tr(ng-repeat="x in msg.data")
-                        td(style="border:1px solid #888;padding: 5px") 
-                            {{x.label}}
-                        td(style="border:1px solid #888;padding: 5px") 
-                            {{x.value}}
-                        
+                div(style="background:#ffa;border-bottom:8px solid #add;padding:2%" ng-show="details")
+                    h5 Displaying table using DIV tags.
+                    br
+                    #t-div(style="background:#ddf;margin-right:40%")
+                        #th-div(style="background:#ddf;border-bottom:8px solid #aaf; padding: 5px")
+                            h4 {{msg.chart.caption}}
+                            h6 {{msg.chart.subCaption}}
+                        #tr-div(style='width=60;margin=20%;background:#ddf;padding:5px;border-bottom:1px solid #888')
+                            #td-div(ng-repeat="x in msg.data")
+                                div(style='width:50%; float:left;border:1px solid #222;background:#ccd') 
+                                    {{x.label}} 
+                                div(style='width:50%; float:right;border:1px solid #222;background:#ccd')     
+                                    {{x.value}}
                     
+                    br
+                    br
+                    br
                     
+                    h5 Displaying table using TABLE tags.
+                
+                    table(style="background:#ddf; border:3px solid #aaf; padding:5px")
+                        tr()
+                            th(style="border:1px solid #888;padding: 5px")  
+                                {{msg.data[0].th1}} 
+                            th(style="border:1px solid #888;padding: 5px")  
+                                {{msg.data[0].th2}}
+                        tr(ng-repeat="x in msg.data")
+                            td(style="border:1px solid #888;padding: 5px;background:#ddf") 
+                                {{x.label}}
+                            td(style="border:1px solid #888;padding: 5px;background:#ffd") 
+                                {{x.value}}
+            
+            
         #credits(style='bottom: 5% solid #add;margin-top: 5% ;z-index: 1; padding: 2%; background: #add')
             a(href='/') Web Data Management
             p NodeJS with ExpressJS middleware and AngularJS app front.
             a(href='/index') Log in 
                 h6 (Just for practice)    
             
-       
+        style.
+            div.angular-google-map-container{ height: 400px; }
+        script(type="text/stylesheet")
+            .angular-google-map-container{ height: 400px; }
+            
         script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
+        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js")
         script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+        script(src="https://code.angularjs.org/1.4.8/angular-resource.min.js")
+        
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js")
+        script(src="http://rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.js")
+        script(src="http://rawgit.com/angular-ui/angular-google-maps/2.2.1/dist/angular-google-maps.js?")
         
         script(src="./js/app.js")
         

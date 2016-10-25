@@ -1,27 +1,2 @@
-body {
-            padding-top: 100px;
-        }
-    .form-container1 {
-        width: 600px;
-        margin: auto;
-        }
-    .credits {
-        bottom: 1px solid #ddd;
-        margin-top: 40px;
-        padding-top: 20px;
-        }
-
-a {
-  color: #00B7FF;
-}
-td{
-  border: 1px solid grey;
-   border-collapse: collapse;
-  padding: 5px;
-}
-table tr:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-table tr:nth-child(even) {
-  background-color: #ffffff;
-}
+.angular-google-map-container{ height: 400px; }
+br(style="clear:left")
