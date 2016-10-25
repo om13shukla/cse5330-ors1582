@@ -4,22 +4,22 @@ head
 body
         title=MyBlog
         link(rel= 'stylesheet',href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') 
-        #leabel-head(style='top: 5% solid #add; margin-bottom: auto; z-index:1 ;padding: 2%; background: #adf')
+        #leabel-head(style='top: 5% solid #add; margin-bottom: auto; z-index:1 ;padding: 2%; background: #aaf')
             h1 Web Data Management
             p NodeJS with ExpressJS middleware and AngularJS app front. 
             p Oblectives- 1.a : Hosting a Web Page on Herku.| 1.b : Angular.JS to dynamically modify the Page.| 1.c : Using Node.JS at the server side.
         #container(style='padding: 2%; margin:10%;')
             
             div(ng-controller="myCtrl1")
-                h3(style="color:#888") Welcome
+                h1(style="color:#888") Welcome
                 p   These Sections take Care of Objective 2 and 3.
                 button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
-                    | Objective-3
+                    | Http.Get(x)
                     .clearfix
                 br
                 br
                 input(type="checkbox" ng-model="showRaw")
-                lable Check this to Show raw JSON recevied from Server.
+                lable Check this to Show raw JSON recevied from Server {Show or Hide}.
                                
                 div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px")
                     p(style="overflow: auto;")    
@@ -35,7 +35,7 @@ body
                         div(style="border-bottom:3px solid #ddd" )
                             h5 The user with ID: {{ujson.comments[0].id}} , Commented that: " {{ujson.comments[0].text}} "  on {{ujson.comments[0].createdAt | date:"MM/dd/yyyy 'at' h:mma"}}
                         div(style="border-bottom:3px solid #ddd" )
-                            img(style='width:15%;height:20%;align:center; border:4px solid #aaa;background:#ccd' src="{{ujson.linked.medias[0].url}}")
+                            img(style='width:15%;height:23%;align:center; border:4px solid #aaa;background:#ccd' src="{{ujson.linked.medias[0].url}}")
                             h5 The User ID:{{ujson.comments[0].id}} , Commented on this Profile of user {{ujson.linked.users[0].firstName}} {{ujson.linked.users[0].lastName}} with ID: {{ujson.linked.users[0].id}} 
                             h5 This user is {{active}}, with last login on {{ujson.linked.users[0].lastLogin | date:"MM/dd/yyyy 'at' h:mma"}} 
                               
@@ -50,7 +50,7 @@ body
                 br
                 br
                 input(type="checkbox" ng-model="showRaw")
-                lable Check this to Show raw JSON recevied from Server.
+                lable Check this to Show raw JSON recevied from Server {Show or Hide}.
                                
                 div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px")
                     div(style="word-wrap:break-word;")    
@@ -62,9 +62,9 @@ body
                 div(style="padding:2%" ng-show="details")
                     div(ng-repeat=" e in longj")
                         div(style="background:#ddd;padding:2%;border-bottom:3px solid #fff; float:left; width:50%")
-                            h4(align="center") {{e.name}}
+                            h4(align="center" style="border-bottom: 8px solid #888") {{e.name}}
                             h5 ID: {{e._id}}
-                            h5 Start Date: {{e.registered | date:"MM/dd/yyyy 'at' h:mma"}}
+                            h5 Start Date: {{e.registered | date:"medium"}}
                             h5 Salary {{e.balance}}
                             h5 E-mail: {{e.email}}
                             h5 Phone: {{e.phone}}
@@ -85,12 +85,12 @@ body
                 h3(style="color:#888") Comparing Table Formats Created using DIV and TABLE tags.
                 
                 button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
-                    | Objective-3
+                    | DIV n TABLES
                     .clearfix
                 br
                 br
                 input(type="checkbox" ng-model="showRaw")
-                lable Check this to Show raw JSON recevied from Server.
+                lable Check this to Show raw JSON recevied from Server {Show or Hide}.
                 
                
                 div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px")
@@ -102,13 +102,13 @@ body
                 
                 
                 div(style="background:#ffa;border-bottom:8px solid #add;padding:2%" ng-show="details")
-                    h5 Displaying table using DIV tags.
+                    h4 Displaying table using DIV tags.
                     br
                     #t-div(style="background:#ddf;margin-right:40%")
                         #th-div(style="background:#ddf;border-bottom:8px solid #aaf; padding: 5px")
                             h4 {{msg.chart.caption}}
                             h6 {{msg.chart.subCaption}}
-                        #tr-div(style='width=60;margin=20%;background:#ddf;padding:5px;border-bottom:1px solid #888')
+                        #tr-div(style='width=60%;margin=20%;background:#ddf;padding:5px;border-bottom:1px solid #888')
                             #td-div(ng-repeat="x in msg.data")
                                 div(style='width:50%; float:left;border:1px solid #222;background:#ccd') 
                                     {{x.label}} 
@@ -118,23 +118,26 @@ body
                     br
                     br
                     br
+                    br
+                    br
+                    br
+                    br
                     
-                    h5 Displaying table using TABLE tags.
-                
-                    table(style="background:#ddf; border:3px solid #aaf; padding:5px")
-                        tr()
+                    h4 Displaying table using TABLE tags.
+                    table(style="background:#ccc; border:3px solid #aaf; padding:5px")
+                        tr(style="background:#ccc;")
                             th(style="border:1px solid #888;padding: 5px")  
                                 {{msg.data[0].th1}} 
                             th(style="border:1px solid #888;padding: 5px")  
                                 {{msg.data[0].th2}}
                         tr(ng-repeat="x in msg.data")
-                            td(style="border:1px solid #888;padding: 5px;background:#ddf") 
+                            td(style="border:1px solid #888;padding: 5px;background:#fdf") 
                                 {{x.label}}
                             td(style="border:1px solid #888;padding: 5px;background:#ffd") 
                                 {{x.value}}
             
             
-        #credits(style='bottom: 5% solid #add;margin-top: 5% ;z-index: 1; padding: 2%; background: #add')
+        #credits(style='bottom: 5% solid #add;margin-top: 5% ;z-index: 1; padding: 2%; background: #aaf')
             a(href='/') Web Data Management
             p NodeJS with ExpressJS middleware and AngularJS app front.
             a(href='/index') Log in 
