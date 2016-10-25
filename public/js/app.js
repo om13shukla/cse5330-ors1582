@@ -11,7 +11,7 @@ var app = angular.module('myApp', ['uiGmapgoogle-maps']).config(
 app.controller('myCtrl1', function($scope, $http) {
     $scope.preMsg="Click the button atleast !!";
     $scope.callServer=function() {
-                $http.get("http://localhost:3000/jsonfiles/userinfo.json")
+                $http.get("http://cse5335-ors1582.herokuapp.com/jsonfiles/userinfo.json")
                         .then(function(response) {
                 $scope.ujson=response.data;
                 $scope.preMsg="";
@@ -32,7 +32,7 @@ app.controller('myCtrl1', function($scope, $http) {
 app.controller('myCtrl2', function($scope, $http, uiGmapIsReady) {
     $scope.preMsg="Click the button atleast !!";
     $scope.callServer=function() {
-                $http.get("http://localhost:3000/jsonfiles/frndsinfo.json")
+                $http.get("http://cse5335-ors1582.herokuapp.com/jsonfiles/frndsinfo.json")
                         .then(function(response) {
                 $scope.longj=response.data;
                 $scope.preMsg="";
@@ -56,7 +56,7 @@ app.controller('myCtrl2', function($scope, $http, uiGmapIsReady) {
 app.controller('myCtrl3', function($scope, $http) {
     $scope.preMsg="Click the button atleast !!";
     $scope.callServer=function() {
-                $http.get("http://localhost:3000/jsonfiles/chartData.json")
+                $http.get("http://cse5335-ors1582.herokuapp.com/jsonfiles/chartData.json")
                         .then(function(response) {
                 $scope.msg=response.data;
                 $scope.preMsg="";
