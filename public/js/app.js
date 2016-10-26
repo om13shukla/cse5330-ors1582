@@ -1,5 +1,5 @@
 
-var app = angular.module('myApp', ['uiGmapgoogle-maps']).config(
+var app = angular.module('myApp', ['uiGmapgoogle-maps','chart.js']).config(
     ['uiGmapGoogleMapApiProvider', function(GoogleMapApiProviders) {
         GoogleMapApiProviders.configure({
             key:'AIzaSyAhp6ud3AmXvLbMNuiL8J_z4uI94kkCQSk',
@@ -37,14 +37,16 @@ app.controller('myCtrl2', function($scope, $http, uiGmapIsReady) {
                 $scope.longj=response.data;
                 $scope.preMsg="";
                 $scope.details=true;
-                $scope.markers={
-                    "id":0,
-                    "coords":{
-                            "latitude":32.740757,
-                            "longitude":-97.088242
-                        }
+                $scope.data1=[];
+                $scope.labels=[];
+                angular.forEach($scope.longj,function(value,key){
                     
-                };
+                    $scope.labels.push(value.name);
+                    $scope.data1.push(value.balance);
+                    
+                })
+                console.log($scope.labels);                           //for Debugginh angular.foreach !!
+                console.log($scope.data1);    
                 $scope.map = { center: { latitude: 32.729182, longitude: -97.115219 }, zoom: 10 };   
                     
                 //console.log(response);

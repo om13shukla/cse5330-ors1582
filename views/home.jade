@@ -65,7 +65,7 @@ body
                             h4(align="center" style="border-bottom: 8px solid #888") {{e.name}}
                             h5 ID: {{e._id}}
                             h5 Start Date: {{e.registered | date:"medium"}}
-                            h5 Salary {{e.balance}}
+                            h5 Salary {{e.balance|currency}}
                             h5 E-mail: {{e.email}}
                             h5 Phone: {{e.phone}}
                             h5 Adress: {{e.address}}
@@ -77,8 +77,14 @@ body
                     h4 Following are the Office Locations of Employees Above.
                     ui-gmap-google-map( center='map.center' zoom='map.zoom')
                         span(ng-repeat="x in longj")
-                            ui-gmap-marker(idKey="markers.id" coords="x.coords" options="x.name")
-                    
+                            ui-gmap-marker(idKey="0" coords="x.coords" options="x.name")
+                    br
+                    br
+                    br
+                    h4 Following are the Stats for Total profit at each Office Locations Above.
+                    div(style="background:#ddd;border: 4px solid #ccc padding:10%" )
+                        canvas(id="pie" class="chart chart-pie" chart-data="data1" chart-labels="labels" chart-options="options")
+                            
                     
             div(ng-controller="myCtrl3" style="position:relative")
                 
@@ -154,6 +160,9 @@ body
         script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
         script(src="https://code.angularjs.org/1.4.8/angular-resource.min.js")
         
+        script(src="./js/chart.js/dist/Chart.min.js")
+        script(src="./js/angular-chart.js/dist/angular-chart.min.js")
+                
         script(src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js")
         script(src="http://rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.js")
         script(src="http://rawgit.com/angular-ui/angular-google-maps/2.2.1/dist/angular-google-maps.js?")
