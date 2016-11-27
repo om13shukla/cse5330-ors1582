@@ -69,3 +69,37 @@ app.controller('myCtrl3', function($scope, $http) {
     
 });
     
+app.controller('myCtrl4', function($scope, $http) {
+    $scope.preMsg="Click the button atleast !!";
+ 
+    $scope.callServer=function() {
+                $http.get("http://cse5335-ors1582.herokuapp.com/jsonfiles/empData.json")
+                        .then(function(response) {
+                $scope.empd=response.data;
+                $scope.preMsg="";
+                $scope.details=true;    
+                //console.log(response);
+                });
+    }
+    
+    $scope.callDbCreate=function(emp) {                                                //Creating Employer.
+            $http.post('http://cse5335-ors1582.herokuapp.com/api/emps/createEmp', emp).then(handleSuccess, handleError);
+    }
+    
+     $scope.callDbfind=function(empno) {                                                //finding Employer.
+            var fparam= '{"empno":' + empno + '}' ;
+            console.log(fparam);
+            $scope.showRaw=true;
+            $http.post('http://cse5335-ors1582.herokuapp.com/api/emps/findOne',fparam).then(handleSuccess, handleError);
+    }
+     function handleSuccess(res) {
+            //console.log( res.data);
+            $scope.premsg41 = res.data;
+        }
+
+        function handleError(res) {
+            console.log(res.data.Object);
+            return res;
+        }
+});
+    

@@ -10,8 +10,48 @@ body
             p Oblectives- 1.a : Hosting a Web Page on Herku.| 1.b : Angular.JS to dynamically modify the Page.| 1.c : Using Node.JS at the server side.
         #container(style='padding: 2%; margin:10%;')
             
+            div(ng-controller="myCtrl4")
+                h1(style="color:#000") Project 2:
+                br
+                br
+                h3(style="color:#ada") To View The JSON used to Populate the DATABASE (Employees)
+                button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
+                    | JSON data
+                    .clearfix
+                br
+                br
+                input(type="checkbox" ng-model="showRaw")
+                lable Check this to Show DATA recevied from Server {Show or Hide}.
+                               
+                div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px;word-wrap:break-word;")
+                    p(style="overflow: auto;")    
+                        h4 {{empd}} 
+                        h4 {{premsg41}}
+                        
+                div        
+                br
+                br
+                div(style="padding:2%" ng-show="details")
+                    div(ng-repeat=" e in empd")
+                        div(style="background:#ddd;padding:2%;border-bottom:3px solid #fff;word-wrap:break-word;")
+                            h6 {{ callDbCreate(e) }}
+                
+                div
+                    input(type="text" ng-model="emp1")  
+                    br
+                    br
+                    button(ng-click="callDbCreate(emp1)").btn.btn-primary(style="height:20px ; width:80px;color:#aaf")
+                    |CreateOne :Enter JSON DATA only. 
+                    .clearfix
+                    br
+                    button(ng-click="callDbfind(emp1)").btn.btn-primary(style="height:20px ; width:80px;color:#aaf")
+                    |FindOne :Enter Employee Number. 
+                    .clearfix
+                
+                
+                
             div(ng-controller="myCtrl1")
-                h1(style="color:#888") Welcome
+                h1(style="color:#000") Project 1: 
                 p   These Sections take Care of Objective 2 and 3.
                 button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
                     | Http.Get(x)

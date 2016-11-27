@@ -19,6 +19,10 @@ var home = require('./routes/home');
 var userService = require( './routes/userService');     //for practice
 
 var userControler= require('./routes/userControler');   //for practice
+
+
+var userControler= require('./routes/empService');   //This handle actual insert and find operations
+var empControler= require('./routes/empControler');   // Emp Controller to get data into db service
 var sendJSON= require('./routes/sendJSON');   //for sending json files.
 
 var app = express();
@@ -47,11 +51,10 @@ app.use('/', home);
 app.use('/jsonfiles', sendJSON);
 
 
-app.use('/api/users', userControler);
+
+app.use('/api/emps', empControler);     // Route to empController
 
 
-// use JWT auth to secure the api
-//app.use('/', expressJwt({ secret: config.secret }).unless({ path: ['/api/users/authenticate', '/api/users/register']}));
 
 
 // catch 404 and forward to error handler
