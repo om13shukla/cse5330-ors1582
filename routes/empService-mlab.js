@@ -18,7 +18,7 @@ var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
-db.once('open', function callback () {
+/*db.once('open', function callback () {
     
     
     console.log(chalk.green("Connected to mongolab.--- Connection is now open"));
@@ -37,7 +37,8 @@ db.once('open', function callback () {
 var Emp = mongoose.model('emps', empSchema);
 
 });
-
+*/
+var Emp = db.collection('emps');
 
 var service = {};
 
@@ -80,11 +81,20 @@ function findOne(fparams){
 function create(eparams){
     console.log(chalk.green("REACHED in create() --> empService"));      //for debugging
     console.log(chalk.green("eparams:  " +eparams.empno+" "+eparams.Name));      //for debugging
-    var newEmp =  new Emp(eparams);
+   
+    /* var newEmp =  new Emp(eparams);
     newEmp.save(function (err, emp) {
             if (err) return console.error(err);
             concat.log(chalk.brown("just Inserted EMP--"+ emp.empno));    
         });
+        */
+    
+    
+    Emp.insert(eparams,function (err, emp) {
+            if (err) return console.error(err);
+            concat.log(chalk.brown("just Inserted EMP--"+ emp.empno));    
+        });
+    
 }
 
 function update(){}
