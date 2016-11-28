@@ -73,6 +73,8 @@ function findOne(fparams){
             // emp not found
             deferred.resolve();
         }
+        deferred.resolve(emp);
+        return emp;
     });
     
    
