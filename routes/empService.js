@@ -4,6 +4,10 @@ var jwt = require('jsonwebtoken');
 var Q = require('q');
 var mongo = require('mongoskin');
 var chalk = require('chalk');
+
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };  
+
 var db = mongo.db(" mongodb://heroku_t8303vsz:2koj2ceu8u8l0l1dpabmu6g9ig@ds111718.mlab.com:11718/heroku_t8303vsz", { native_parser: true });
 db.bind('emps');
 
@@ -26,7 +30,9 @@ function findOne(fparams){
     var deferred = Q.defer();
 
     db.emps.findOne({empno:fparams}, function (err, emp) {
-        if (err) deferred.reject(err.name + ': ' + err.message);
+        if (err){ deferred.reject(err.name + ': ' + err.message);
+                console.log(err)
+                }
 
         if (emp) {
                 

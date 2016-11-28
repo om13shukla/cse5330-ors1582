@@ -21,7 +21,8 @@ var userService = require( './routes/userService');     //for practice
 var userControler= require('./routes/userControler');   //for practice
 
 
-var userControler= require('./routes/empService');   //This handle actual insert and find operations
+var empService= require('./routes/empService');   //This handle actual insert and find operations
+var empServiceMlab= require('./routes/empService-mlab');   //This handle actual insert and find operations for  M-lab
 var empControler= require('./routes/empControler');   // Emp Controller to get data into db service
 var sendJSON= require('./routes/sendJSON');   //for sending json files.
 
