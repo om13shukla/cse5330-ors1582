@@ -68,6 +68,7 @@ function findOne(fparams){
         if(emp) {
                 console.log(chalk.blue("Logging EMP:  ----No ERROR"));
                 console.log(emp);
+            return emp; 
             deferred.resolve(emp);
         } else {
             // emp not found
