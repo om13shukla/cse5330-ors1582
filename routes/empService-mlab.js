@@ -61,10 +61,10 @@ function findOne(fparams){
     
     db.emps.find({empno:fparams}, function (err, emp) {
         if (err){ deferred.reject(err.name + ': ' + err.message);
-                console.log(chalk.red("Logginf Error"));
+                console.log(chalk.red("Logging Error"));
                  console.log(err)
               }
-
+        console.log(emp);
         if (emp) {
                 console.log(chalk.blue("Logging EMP:  ----No ERROR"));
                 
@@ -77,9 +77,6 @@ function findOne(fparams){
         }
     });
     
-    
-
-    return deferred.promise;
    
 }
 
