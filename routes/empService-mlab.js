@@ -34,7 +34,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
     
     console.log(chalk.green("Connected to mongolab.--- Connection is now open"));
-}
+});
 
 
 var service = {};
