@@ -77,10 +77,14 @@ function findOne(fparams){
 
 function create(eparams){
     console.log(chalk.green("REACHED in create() --> empService"));      //for debugging
-    var newEmp =  new Emp(eparams);
+    console.log(chalk.green("eparams" +eparams.empno+eparams.Name));      //for debugging
+    var newEmp =  new Emp(eparams, function(err,succ){
+        if err {console.log(err);}
+        if succ {console.log(succ);}
+    });
     newEmp.save(function (err, emp) {
-    if (err) return console.error(err);
-    concat.log(chalk.brown("just Inserted EMP--"+emp.empno));    
+            if (err) return console.error(err);
+            concat.log(chalk.brown("just Inserted EMP--"+emp.empno));    
         });
 }
 
