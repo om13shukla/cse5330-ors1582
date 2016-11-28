@@ -60,11 +60,13 @@ function findOne(fparams){
 
     Emp.find({empno:fparams}, function (err, emp) {
         if (err){ deferred.reject(err.name + ': ' + err.message);
-                console.log(err)
+                console.log(chalk.red("Logginf Error"));
+                 console.log(err)
+                
                 }
 
         if (emp) {
-                
+                console.log(chalk.blue("Logging EMP:  "));
                 console.log(emp);
             deferred.resolve(emp);
         } else {
@@ -91,8 +93,9 @@ function create(eparams){
     
     
     Emp.insert(eparams,function (err, emp) {
-            if (err) return console.error(err);
-            concat.log(chalk.brown("just Inserted EMP--"+ emp.empno));    
+            if (err){ return console.error(err);}
+            else
+            console.log(chalk.brown("just Inserted EMP--"+ emp.empno));    
         });
     
 }
