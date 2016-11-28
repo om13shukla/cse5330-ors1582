@@ -79,10 +79,11 @@ function findOne(fparams){
     */
     
     Emp.find({empno:fparams}).exec(function(err,docs){
+        console.log(chalk.green("REACHED in findOne() --> empService: fparam: "+fparams));      //for debugging
         if (err) {console.log(chalk.red("logging err: "+err));}
-        
+        console.log(docs);
         docs.forEach(function(doc){
-           console.log(doc);
+            console.log(doc);
             deferred.resolve(doc);
         });
         deferred.resolve(docs);
@@ -109,7 +110,7 @@ function create(eparams){
     Emp.insert(eparams,function (err, emp) {
             if (err){ return console.error(err);}
             else
-            console.log(chalk.brown("just Inserted EMP--"+ emp.empno));    
+            console.log(chalk.green("just Inserted EMP--"+ emp.empno));    
         });
     
 }

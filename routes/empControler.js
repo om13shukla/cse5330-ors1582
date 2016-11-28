@@ -34,7 +34,7 @@ function findOne(req, res) {
         .then(function (emp) {
             if (emp) {
                 res.send(emp);  
-                console.log(chalk.yellow("empControler ---->emp sent"));
+                console.log(chalk.yellow("empControler ---->emp sent" +emp.empno));
             } else {
                 res.sendStatus(404);   console.log(chalk.red("Error sent"));
             }
