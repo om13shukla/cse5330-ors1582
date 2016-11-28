@@ -15,7 +15,14 @@ mongoose.connect(mlab);
 var db = mongoose.connection;
 
 
-var empSchema = mongoose.Schema({
+
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function callback () {
+    
+    
+    console.log(chalk.green("Connected to mongolab.--- Connection is now open"));
+    var empSchema = mongoose.Schema({
    empno: Number,
    Name: String,
    employees: Number,
@@ -29,11 +36,6 @@ var empSchema = mongoose.Schema({
 
 var Emp = mongoose.model('emps', empSchema);
 
-db.on('error', console.error.bind(console, 'connection error:'));
-
-db.once('open', function callback () {
-    
-    console.log(chalk.green("Connected to mongolab.--- Connection is now open"));
 });
 
 
@@ -78,10 +80,7 @@ function findOne(fparams){
 function create(eparams){
     console.log(chalk.green("REACHED in create() --> empService"));      //for debugging
     console.log(chalk.green("eparams" +eparams.empno+eparams.Name));      //for debugging
-    var newEmp =  new Emp(eparams, function(err,succ){
-        if err {console.log(err);}
-        if succ {console.log(succ);}
-    });
+    var newEmp =  new Emp(eparams);
     newEmp.save(function (err, emp) {
             if (err) return console.error(err);
             concat.log(chalk.brown("just Inserted EMP--"+emp.empno));    
