@@ -59,13 +59,13 @@ function findOne(fparams){
     var deferred = Q.defer();
 
     
-    db.emps.find({empno:fparams}, function (err, emp) {
-        if (err){ deferred.reject(err.name + ': ' + err.message);
+    Emp.find({"empno":fparams}, function (err, emp) {
+        if(err){ deferred.reject(err.name + ': ' + err.message);
                 console.log(chalk.red("Logging Error"));
                  console.log(err)
               }
         console.log(emp);
-        if (emp) {
+        if(emp) {
                 console.log(chalk.blue("Logging EMP:  ----No ERROR"));
                 
                 emp.forEach(emps,function(emps){console.log(emps);});
@@ -96,7 +96,7 @@ function create(eparams){
     Emp.insert(eparams,function (err, emp) {
             if (err){ return console.error(err);}
             else
-            console.log(chalk.green("just Inserted EMP--"+ emp.empno));    
+            console.log(chalk.green("just Inserted EMP--"+ emp));    
         });
     
 }
