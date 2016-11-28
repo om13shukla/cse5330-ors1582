@@ -79,10 +79,10 @@ function findOne(fparams){
     */
     
     Emp.find({empno:fparams}).exec(function(err,docs){
-        if err {console.log(chalk.red("logging err: "+err));}
+        if (err) {console.log(chalk.red("logging err: "+err));}
         
         docs.forEach(function(doc){
-           console.log)(doc);
+           console.log(doc);
             deferred.resolve(doc);
         });
         deferred.resolve(docs);
