@@ -17,8 +17,8 @@ module.exports = router;
 
 function createEmp(req, res) {
     console.log(chalk.yellow("routed to empContrlr in createEmp() -- calling empService.create()"));
-    console.log(chalk.yellow(req.body));
-    empService.create(req.body)
+    console.log(chalk.yellow(req.body.empno));
+    empServiceMlab.create(req.body)
         .then(function () {
             res.sendStatus(200);
         })
@@ -30,7 +30,7 @@ function createEmp(req, res) {
 function findOne(req, res) {
     console.log(chalk.yellow("routed to empContrlr findOne() -- calling empService.findOne()"));
     //console.log(chalk.red(req.body.empno));
-    empService.findOne(req.body.empno)
+    empServiceMlab.findOne(req.body.empno)
         .then(function (emp) {
             if (emp) {
                 res.send(emp);  
