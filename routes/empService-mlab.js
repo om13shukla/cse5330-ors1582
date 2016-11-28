@@ -58,16 +58,17 @@ function findOne(fparams){
     console.log(chalk.green("REACHED in findOne() --> empService: fparam: "+fparams));      //for debugging
     var deferred = Q.defer();
 
-    /*
-    Emp.find({empno:fparams}, function (err, emp) {
+    
+    db.emps.find({empno:fparams}, function (err, emp) {
         if (err){ deferred.reject(err.name + ': ' + err.message);
                 console.log(chalk.red("Logginf Error"));
                  console.log(err)
-                
-                }
+              }
 
         if (emp) {
-                console.log(chalk.blue("Logging EMP:  "));
+                console.log(chalk.blue("Logging EMP:  ----No ERROR"));
+                
+                emp.forEach(emps){console.log(emps);}
                 console.log(emp);
             deferred.resolve(emp);
         } else {
@@ -76,18 +77,6 @@ function findOne(fparams){
         }
     });
     
-    */
-    
-    Emp.find({empno:fparams}).exec(function(err,docs){
-        console.log(chalk.green("REACHED in findOne() --> empService: fparam: "+fparams));      //for debugging
-        if (err) {console.log(chalk.red("logging err: "+err));}
-        console.log(docs);
-        docs.forEach(function(doc){
-            console.log(doc);
-            deferred.resolve(doc);
-        });
-        deferred.resolve(docs);
-    });
     
 
     return deferred.promise;
