@@ -5,8 +5,8 @@ var Q   = require('q');
 var mongoose = require('mongoose');
 var chalk    = require('chalk');
 
-var options  = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
+var options  = { server: { socketOptions: { keepAlive: 300000 } }, 
+                replset: { socketOptions: { keepAlive: 300000 } } };
 
 var mlab = 'mongodb://heroku_t8303vsz:2koj2ceu8u8l0l1dpabmu6g9ig@ds111718.mlab.com:11718/heroku_t8303vsz'
 
@@ -79,11 +79,11 @@ function findOne(fparams){
 
 function create(eparams){
     console.log(chalk.green("REACHED in create() --> empService"));      //for debugging
-    console.log(chalk.green("eparams" +eparams.empno+eparams.Name));      //for debugging
+    console.log(chalk.green("eparams:  " +eparams.empno+" "+eparams.Name));      //for debugging
     var newEmp =  new Emp(eparams);
     newEmp.save(function (err, emp) {
             if (err) return console.error(err);
-            concat.log(chalk.brown("just Inserted EMP--"+emp.empno));    
+            concat.log(chalk.brown("just Inserted EMP--"+ emp.empno));    
         });
 }
 
