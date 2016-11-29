@@ -19,7 +19,7 @@ body
                     | Start Calling
                     .clearfix
                 div(style="padding:2%")
-                    div(ng-repeat="emp in emps track by $index"; position: relative;" )
+                    div(ng-repeat="emp in emps track by $index"; style="position: relative;" )
                         div(style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; vertical-align:top;position: relative;")
                             h4(align="center" style="border-bottom: 4px solid #888") 
                                 Name: {{emp.Name}}
