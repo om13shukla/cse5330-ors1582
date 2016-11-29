@@ -59,7 +59,7 @@ function findOne(fparams){
     var deferred = Q.defer();
 
     
-    Emp.findOne({"empno":fparams}) /*, function (err, emp) {
+   return Emp.findOne({"empno":fparams}); /*, function (err, emp) {
         if(err){ deferred.reject(err.name + ': ' + err.message);
                 console.log(chalk.red("Logging Error"));
                 console.log(err)

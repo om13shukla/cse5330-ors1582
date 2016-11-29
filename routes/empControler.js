@@ -44,7 +44,7 @@ function findOne(req, res) {
         });
     
     */
-      
+      console.log(emp);
       if(emp){res.send(emp);}
     
 }
