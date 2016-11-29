@@ -88,8 +88,8 @@ function findOne(fparams){
 
 function create(eparams){
     console.log(chalk.green("REACHED in create() --> empService"));      //for debugging
-    console.log(chalk.green("eparams:  " +eparams.empno+" "+eparams.Name));      //for debugging
-   
+    console.log(chalk.green("creating: ------------------------------- " +eparams.empno+" "+eparams.Name));      //for debugging
+    
     /* var newEmp =  new Emp(eparams);
     newEmp.save(function (err, emp) {
             if (err) return console.error(err);
@@ -98,12 +98,8 @@ function create(eparams){
         */
     
     
-    Emp.insert(eparams,function (err, emp) {
-            if (err){ return console.error(err);}
-            else
-            console.log(chalk.green("just Inserted EMP--"+ emp));    
-        });
-    
+    var promise = Emp.insert(eparams);
+    return promise;
 }
 
 function update(){}
