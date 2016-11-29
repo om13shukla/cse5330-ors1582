@@ -72,7 +72,7 @@ app.controller('myCtrl3', function($scope, $http) {
 app.controller('myCtrl4', function($scope, $http,$interval) {
     $scope.preMsg="Click the button atleast !!";
     $scope.emps=[];
-    
+    var i=1;
     $scope.callServer=function() {
                 $http.get("http://cse5335-ors1582.herokuapp.com/jsonfiles/empData.json")
                         .then(function(response) {
@@ -86,14 +86,9 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
     
     $scope.callWidTimOut= function(){
         var delay=500;
-        var i=1;
-        //$scope.calledAt = new Date();
-        //var format = 'M/d/yy h:mm:ss a';
         $interval(function(){  $scope.callDbfind(i); i++; console.log(i); }, 
                   delay, 
                   10);
-        
-        
     }
     
     
