@@ -23,11 +23,11 @@ body
                     div(ng-repeat="emp in emps track by $index" style="background:#ddd;padding:2%;border-bottom:3px solid #fff;word-wrap:break-word;" )
                         h4 Name: {{emp.Name}}
                         
-                        h6 Employee Number: {{emp.empno}}
-                        h6 Region: {{emp.region}} (Latitude/Longitude):( {{emp.lat}} / {{emp.long}} )      
-                        h6 Region Number: {{emp.no1}}    Weekly Average: {{emp.avg}}  
-                        h6 Feild of Work: {{emp.field}}
-                        h6 Number of Employees: {{emp.employees}}
+                        h5 Employee Number: {{emp.empno}}
+                            Region: {{emp.region}} (Latitude/Longitude):( {{emp.lat}} / {{emp.long}} )      
+                            Region Number: {{emp.no1}}    Weekly Average: {{emp.avg}}  
+                            Feild of Work: {{emp.field}}
+                            Number of Employees: {{emp.employees}}
                        
                 
                 br
