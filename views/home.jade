@@ -19,14 +19,14 @@ body
                     | Start Calling
                     .clearfix
                 div(style="padding:2%")
-                    div(ng-repeat="emp in emps track by $index | limitTo:5" style="position: relative;" )
-                        div(style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
+                    div(ng-repeat="emp in emps track by $index" style="position: relative;" )
+                        div(class="card" ng-show="show[emp.empno]" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
                             h3(align="center" style="border-bottom: 2px solid #888") 
                                 Name: {{emp.Name}}
-                            h1  Employee Number: {{emp.empno}} 
-                            h1  Region: {{emp.region}} | Weekly Average: {{emp.avg}} 
-                            h1  Latitude | | Longitude : ( {{emp.lat}} | | {{emp.long}} ) 
-                            h1  Feild of Work: {{emp.field}} | Number of Employees: {{emp.employees}}
+                            h5  Employee Number: {{emp.empno}} 
+                            h5  Region: {{emp.region}} | Weekly Average: {{emp.avg}} 
+                            h5  Latitude | | Longitude : ( {{emp.lat}} | | {{emp.long}} ) 
+                            h5  Feild of Work: {{emp.field}} | Number of Employees: {{emp.employees}}
                             
                        
                 
@@ -215,6 +215,15 @@ body
             
         style.
             div.angular-google-map-container{ height: 400px; }
+            div.card}{transition: all linear 0.5s;}
+            .ng-show {
+                        height: 0;
+                        width: 0;
+                        background-color: transparent;
+                        top:-200px;
+                        left: 200px;
+                        }
+        
         script(type="text/stylesheet")
             .angular-google-map-container{ height: 400px; }
             

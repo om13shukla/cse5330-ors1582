@@ -73,6 +73,7 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
     $scope.preMsg="Click the button atleast !!";
     $scope.emps=[];
     var i=1;
+    $scope.show=[];
     $scope.callServer=function() {
                 $http.get("http://cse5335-ors1582.herokuapp.com/jsonfiles/empData.json")
                         .then(function(response) {
@@ -104,8 +105,11 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
             $http.post('http://cse5335-ors1582.herokuapp.com/api/emps/findOne',fparam).then(handleSuccess, handleError);
     }
      function handleSuccess(res) {
+             if($scope.emps.length >5)
+            $scope.emps.slice(0,-1);
             
             $scope.emps.splice(0, 0, res.data);
+            $scope.show.splice(0,0,'true');
             //$scope.emps.push(res.data);
             $scope.premsg41 = res.data;
         }
