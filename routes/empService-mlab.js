@@ -59,7 +59,7 @@ function findOne(fparams){
     var deferred = Q.defer();
 
     
-    var promise =Emp.findOne({"empno":fparams}).exec();  /*, function (err, emp) {
+    var promise =Emp.findOne({"empno":fparams});  /*, function (err, emp) {
         if(err){ deferred.reject(err.name + ': ' + err.message);
                 console.log(chalk.red("Logging Error"));
                 console.log(err)
