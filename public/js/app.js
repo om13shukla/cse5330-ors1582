@@ -86,7 +86,7 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
     
     $scope.callWidTimOut= function(){
         var delay=500;
-        var i=0;
+        var i=1;
         //$scope.calledAt = new Date();
         //var format = 'M/d/yy h:mm:ss a';
         $interval(function(){  $scope.callDbfind(i); i++; console.log(i); }, 

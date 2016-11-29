@@ -23,11 +23,11 @@ body
                     div(ng-repeat="emp in emps track by $index" style="background:#ddd;padding:2%;border-bottom:3px solid #fff;word-wrap:break-word;" )
                         h4 Name: {{emp.Name}}
                         
-                        h5  Employee Number: {{emp.empno}} &nbsp;&nbsp;&nbsp;
-                            Region: {{emp.region}} (Latitude/Longitude):( {{emp.lat}} / {{emp.long}} ) &nbsp;&nbsp;&nbsp;    
-                            Region Number: {{emp.no1}}    Weekly Average: {{emp.avg}} &nbsp;&nbsp;&nbsp; 
-                            Feild of Work: {{emp.field}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Number of Employees: {{emp.employees}} &nbsp;&nbsp;
+                        h5  Employee Number: {{emp.empno}} 
+                        h5  Region: {{emp.region}}  (Latitude/Longitude):( {{emp.lat}} / {{emp.long}} )    
+                        h5  Region Number: {{emp.no1}}    Weekly Average: {{emp.avg}} 
+                            Feild of Work: {{emp.field}} 
+                        h5  Number of Employees: {{emp.employees}}
                        
                 
                 br
@@ -42,9 +42,11 @@ body
                     .clearfix
                 br
                 br
+                h5(style="color:#ada") This will always show what data is Currently fethced by DB Server.
                 input(type="checkbox" ng-model="showRaw")
                 lable Check this to Show DATA recevied from Server {Show or Hide}.
-                               
+                
+                
                 div(class="show-data" ng-show="showRaw" style="background:#ddd;border-bottom:8px solid #dda;padding:5px;word-wrap:break-word;")
                     p(style="overflow: auto;")    
                         h4 {{empd}} 
