@@ -20,7 +20,7 @@ body
                     .clearfix
                 div(style="padding:2%")
                     div(ng-repeat="emp in emps track by $index" style="position: relative;" )
-                        div(class="card" ng-show="show[emp.empno]" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
+                        div(class="card" ng-hide="show[emp.empno]" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
                             h3(align="center" style="border-bottom: 2px solid #888") 
                                 Name: {{emp.Name}}
                             h5  Employee Number: {{emp.empno}} 
@@ -215,8 +215,10 @@ body
             
         style.
             div.angular-google-map-container{ height: 400px; }
-            div.card}{transition: all linear 0.5s;}
-            .ng-show {
+        style.
+            div.card{transition: all linear 0.5s;}
+        style.
+            ng-hide {
                         height: 0;
                         width: 0;
                         background-color: transparent;
@@ -224,9 +226,7 @@ body
                         left: 200px;
                         }
         
-        script(type="text/stylesheet")
-            .angular-google-map-container{ height: 400px; }
-            
+       
         script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
         script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js")
