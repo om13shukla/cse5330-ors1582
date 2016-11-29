@@ -44,7 +44,7 @@ function findOne(req, res) {
         });
     
     */
-      console.log('FORM EMPCONTROLLER' emp);
+      console.log('FORM EMPCONTROLLER'+ emp);
       if(emp){res.send(emp);}
     
 }
