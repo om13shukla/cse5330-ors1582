@@ -62,20 +62,19 @@ function findOne(fparams){
     Emp.findOne({"empno":fparams}, function (err, emp) {
         if(err){ deferred.reject(err.name + ': ' + err.message);
                 console.log(chalk.red("Logging Error"));
-                 console.log(err)
+                console.log(err)
               }
         console.log(emp);
         if(emp) {
                 console.log(chalk.blue("Logging EMP:  ----No ERROR"));
-                console.log(emp);
-            return emp; 
-            deferred.resolve(emp);
+                console.log(emp);         
+                deferred.resolve(emp);
         } else {
-            // emp not found
-            deferred.resolve();
+                // emp not found
+                deferred.resolve();
         }
         deferred.resolve(emp);
-        return emp;
+        //return emp;
     });
     
    
