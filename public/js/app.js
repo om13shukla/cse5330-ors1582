@@ -93,7 +93,7 @@ app.controller('myCtrl4', function($scope, $http) {
             $http.post('http://cse5335-ors1582.herokuapp.com/api/emps/findOne',fparam).then(handleSuccess, handleError);
     }
      function handleSuccess(res) {
-            console.log( res);
+            console.log( res.data);
             
             $scope.premsg41 = res;
         }

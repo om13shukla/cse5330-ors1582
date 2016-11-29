@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 //var empService = require('./empService');
-var empServiceMlab = require('./empService-mlab');
+//var empServiceMlab = require('./empService-mlab');
 
 var config = require('./config.json');
 var chalk = require('chalk');
