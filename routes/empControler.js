@@ -31,7 +31,7 @@ function findOne(req, res) {
     console.log(chalk.yellow("routed to empContrlr findOne() -- calling empService.findOne()"));
     //console.log(chalk.red(req.body.empno));
       var emp = empServiceMlab.findOne(req.body.empno)
-    /*      .then(function (emp) {
+          .then(function (emp) {
             if (emp) {
                 res.send(emp);  
                 console.log(chalk.yellow("empControler ---->emp sent" +emp.empno));
@@ -43,8 +43,8 @@ function findOne(req, res) {
             res.status(400).send(err);
         });
     
-    */
-      console.log('FORM EMPCONTROLLER'+ emp);
-      if(emp){res.send(emp);}
+    
+      //console.log('FORM EMPCONTROLLER'+ emp);
+      //if(emp){res.send(emp);}
     
 }
