@@ -20,14 +20,16 @@ body
                     .clearfix
                 div(style="padding:2%")
                     button
-                    div(ng-repeat="emp in emps track by $index" style="background:#ddd;padding:2%;border-bottom:3px solid #fff;word-wrap:break-word;" )
-                        h4 Name: {{emp.Name}}
-                        
-                        h5  Employee Number: {{emp.empno}} 
-                        h5  Region: {{emp.region}}  (Latitude/Longitude):( {{emp.lat}} / {{emp.long}} )    
-                        h5  Region Number: {{emp.no1}}    Weekly Average: {{emp.avg}} 
-                            Feild of Work: {{emp.field}} 
-                        h5  Number of Employees: {{emp.employees}}
+                    div(ng-repeat="emp in emps track by $index" style="padding:2%;" )
+                        div(style="background:#ddd;border-bottom:3px solid #fff;padding:2%;word-wrap:break-word;float:bottom width 50%")
+                            h4 (align="center" style="border-bottom: 8px solid #888")Name: {{emp.Name}}
+                            h5  Employee Number: {{emp.empno}} 
+                            h5  Region: {{emp.region}}    
+                            h5  Latitude | | Longitude : ( {{emp.lat}} | | {{emp.long}} )    
+                            h5  Region Number: {{emp.no1}}    
+                            h5  Weekly Average: {{emp.avg}} 
+                            h5  Feild of Work: {{emp.field}} 
+                            h5  Number of Employees: {{emp.employees}}
                        
                 
                 br
@@ -223,6 +225,7 @@ body
         script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js")
         script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
         script(src="https://code.angularjs.org/1.4.8/angular-resource.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js")
         
         script(src="./js/chart.js/dist/Chart.min.js")
         script(src="./js/angular-chart.js/dist/angular-chart.min.js")

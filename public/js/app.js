@@ -1,5 +1,5 @@
 
-var app = angular.module('myApp', ['uiGmapgoogle-maps','chart.js']).config(
+var app = angular.module('myApp', ['uiGmapgoogle-maps','chart.js','ngAnimate']).config(
     ['uiGmapGoogleMapApiProvider', function(GoogleMapApiProviders) {
         GoogleMapApiProviders.configure({
             key:'AIzaSyAhp6ud3AmXvLbMNuiL8J_z4uI94kkCQSk',
