@@ -56,7 +56,7 @@ module.exports = service;
 function findOne(fparams){
     
     console.log(chalk.green("REACHED in findOne() --> empService: fparam: "+fparams));      //for debugging
-    //var deferred = Q.defer();
+    var deferred = Q.defer();
 
     
     Emp.findOne({"empno":fparams}, function (err, emp) {
