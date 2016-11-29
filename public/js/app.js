@@ -99,7 +99,7 @@ app.controller('myCtrl4', function($scope, $http) {
         }
 
         function handleError(res) {
-            console.log(res.object.data);
+            console.log(res);
             return res;
         }
 });
