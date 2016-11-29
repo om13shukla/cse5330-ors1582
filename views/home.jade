@@ -14,6 +14,28 @@ body
                 h1(style="color:#000") Project 2:
                 br
                 br
+                h3(style="color:#ada") When You Click, Database call is made after evry 0.5 Seconds.
+                button(ng-click="callWidTimOut()" ).btn.btn-primary.button-sign-in
+                    | Start Calling
+                    .clearfix
+                div(style="padding:2%")
+                    button
+                    div(ng-repeat="emp in emps track by $index" style="background:#ddd;padding:2%;border-bottom:3px solid #fff;word-wrap:break-word;" )
+                        h4 Name: {{emp.Name}}
+                        
+                        h6 Employee Number: {{emp.empno}}
+                        h6 Region: {{emp.region}} (Latitude/Longitude):( {{emp.lat}} / {{emp.long}} )      
+                        h6 Region Number: {{emp.no1}}    Weekly Average: {{emp.avg}}  
+                        h6 Feild of Work: {{emp.field}}
+                        h6 Number of Employees: {{emp.employees}}
+                       
+                
+                br
+                br
+                br
+                br
+                
+                
                 h3(style="color:#ada") To View The JSON used to Populate the DATABASE (Employees)
                 button(ng-click="callServer()" ).btn.btn-primary.button-sign-in
                     | JSON data
@@ -34,19 +56,19 @@ body
                 div(style="padding:2%" ng-show="details")
                     div(ng-repeat=" e in empd")
                         div(style="background:#ddd;padding:2%;border-bottom:3px solid #fff;word-wrap:break-word;")
-                        
+                            {{e}}
                 
                 div
-                    input(type="text" ng-model="emp1")  
-                    br
-                    br
-                    button(ng-click="callDbCreate(emp1)").btn.btn-primary(style="height:20px ; width:80px;color:#aaf")
-                    |CreateOne :Enter JSON DATA only. 
-                    .clearfix
-                    br
-                    button(ng-click="callDbfind(emp1)").btn.btn-primary(style="height:20px ; width:80px;color:#aaf")
-                    |FindOne :Enter Employee Number. 
-                    .clearfix
+                input(type="text" ng-model="emp1")  
+                br
+                br
+                button(ng-click="callDbCreate(emp1)").btn.btn-primary(style="height:20px ; width:80px;color:#aaf")
+                |CreateOne :Enter JSON DATA only. 
+                .clearfix
+                br
+                button(ng-click="callDbfind(emp1)").btn.btn-primary(style="height:20px ; width:80px;color:#aaf")
+                |FindOne :Enter Employee Number. 
+                .clearfix
                 
                 
                 
