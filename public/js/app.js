@@ -100,6 +100,7 @@ app.controller('myCtrl4', function($scope, $http) {
 
         function handleError(res) {
             console.log(res);
+            $scope.premsg41 = res;
             return res;
         }
 });

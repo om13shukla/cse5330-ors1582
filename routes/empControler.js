@@ -30,8 +30,8 @@ function createEmp(req, res) {
 function findOne(req, res) {
     console.log(chalk.yellow("routed to empContrlr findOne() -- calling empService.findOne()"));
     //console.log(chalk.red(req.body.empno));
-      empServiceMlab.findOne(req.body.empno)
-        .then(function (emp) {
+      var emp = empServiceMlab.findOne(req.body.empno)
+    /*      .then(function (emp) {
             if (emp) {
                 res.send(emp);  
                 console.log(chalk.yellow("empControler ---->emp sent" +emp.empno));
@@ -42,5 +42,9 @@ function findOne(req, res) {
         .catch(function (err) {
             res.status(400).send(err);
         });
+    
+    */
+      
+      if(emp){res.send(emp);}
     
 }
