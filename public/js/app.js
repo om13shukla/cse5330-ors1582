@@ -107,11 +107,13 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
      function handleSuccess(res) {
              if($scope.emps.length >5){
                     $scope.emps.slice(0,-1);
-                    $scope.show.slice(0,-1);
+                    $scope.show[6]=true;
+                    console.log($scope.show);
              }
             var sd=false;
             $scope.emps.splice(0, 0, res.data);
             $scope.show.splice(0,0,sd);
+            console.log($scope.show);
             
             $scope.premsg41 = res.data;
         }
