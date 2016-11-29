@@ -19,17 +19,16 @@ body
                     | Start Calling
                     .clearfix
                 div(style="padding:2%")
-                    button
-                    div(ng-repeat="emp in emps track by $index" style="padding:2%;" )
-                        div(style="background:#ddd;border-bottom:3px solid #fff;padding:2%;word-wrap:break-word; vertical-align:bottom; width 50%")
-                            h4(align="center" style="border-bottom: 8px solid #888") 
+                    div(ng-repeat="emp in emps track by $index" style="padding:2%; position: relative;" )
+                        div(style="background:#ddd;border-bottom:3px solid #fff;padding:2%;word-wrap:break-word; vertical-align:bottom;position: relative;")
+                            h4(align="center" style="border-bottom: 4px solid #888") 
                                 Name: {{emp.Name}}
                             h5  Employee Number: {{emp.empno}} 
                             h5  Region: {{emp.region}}
                             h5  Latitude | | Longitude : ( {{emp.lat}} | | {{emp.long}} ) 
-                            h5  Weekly Average: {{emp.avg}} 
+                                Weekly Average: {{emp.avg}} 
                             h5  Feild of Work: {{emp.field}}
-                            h5  Number of Employees: {{emp.employees}}
+                                Number of Employees: {{emp.employees}}
                             
                        
                 
