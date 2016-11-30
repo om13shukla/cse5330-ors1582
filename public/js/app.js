@@ -112,8 +112,7 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
              }
             var sd=false;
             $scope.emps.splice(0, 0, res.data);
-            console.log($scope.show);
-            
+                    
             $scope.premsg41 = res.data;
         }
 
@@ -123,7 +122,9 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
             return res;
         }
 
-    app.animation('.slide', function () {
+    
+});
+app.animation('.slide', function () {
     return {
         enter: function (element, done) {
           console.log('enter');
@@ -139,6 +140,5 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
         }
     };
     
-});
 });
     
