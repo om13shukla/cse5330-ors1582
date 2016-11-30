@@ -106,7 +106,7 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
             $http.post('http://cse5335-ors1582.herokuapp.com/api/emps/findOne',fparam).then(handleSuccess, handleError);
     }
      function handleSuccess(res) {
-             if($scope.emps.length >20{
+             if($scope.emps.length >20){
                     $scope.emps.slice(0,-1);
                     
              }
