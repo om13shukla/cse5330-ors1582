@@ -1,15 +1,19 @@
 # CSE5335-ors1582
 
-## Project-2
-    1. - NoSQL DataBase: MongoDB 
+## Project-2.
+
+    1. - *NoSQL DataBase: MongoDB 
             ===> Everything else is in JSON why not Database too!
     2. - General Aspects: Comfortable
-            ===> Completeing this project was fun, little less challenging. Although configuring and deploying on cloud environment 
+            ===> Completeing this project was fun, little less challenging. Although configuring 
+                    and deploying on cloud environment 
                  was little tricky and strict.
-            ===> Working with Angular animation is satisfying, able to see every tiny changes ypu make is fun too.
+            ===> Working with Angular animation is satisfying, able to see every tiny changes 
+                    ypu make is fun too.
             
-    3. - NodeJS would be my biggest concern. Understanding middlewares, callbacks, and the error handling on top of Express 
-          especially is tougher then it seems at first. Lot of unkown terretory. Although given a time, would be easy to master.              
+    3. - NodeJS would be my biggest concern. Understanding middlewares, callbacks, and the 
+                error handling on top of Express especially is tougher then it seems at first.
+                Lot of unkown terretory. Although given a time, would be easy to master.              
 
       _____________________________________________________________________________________________________________________
 
