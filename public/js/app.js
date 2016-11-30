@@ -129,9 +129,10 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
 app.animation('.slide', function () {
     return {
         enter: function (element, done) {
-          console.log('enter');
+          console.log('entering new row');
             element.hide().slideDown(600, done);
-            element.style.color()
+            element.css('opacity',0);
+            jQuery(element).animate({opacity: 1}, done);
         },
         move: function(element, done) {
             console.log('move');
@@ -140,11 +141,9 @@ app.animation('.slide', function () {
         leave: function(element, done) {
           console.log('slide up', element.text())
             element.slideUp(500, done);
-        },
-        active: function(element, done) {
-          console.log('slide up', element.text())
-            element.style.color("blue);
-    };
+        }
+        
+      };    
     
 });
     
