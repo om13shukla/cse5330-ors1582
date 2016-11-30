@@ -1,5 +1,20 @@
 # CSE5335-ors1582
-## All Objectives are met.
+
+## Project-2
+    1. - NoSQL DataBase: MongoDB 
+            ===> Everything else is in JSON why not Database too!
+    2. - General Aspects: Comfortable
+            ===> Completeing this project was fun, little less challenging. Although configuring and deploying on cloud environment 
+                 was little tricky and strict.
+            ===> Working with Angular animation is satisfying, able to see every tiny changes ypu make is fun too.
+            
+    3. - NodeJS would be my biggest concern. Understanding middlewares, callbacks, and the error handling on top of Express 
+          especially is tougher then it seems at first. Lot of unkown terretory. Although given a time, would be easy to master.              
+
+      _____________________________________________________________________________________________________________________
+
+## Project-1
+### All Objectives are met.
    **1.a** - Hosted a Web Page on Heroku.  
    **1.b** - AngularJS for Dynamically modifying the contents of Page.  
    **1.c** - RESTful API calls to the server NodeJS from AngularJS app at client side.  
