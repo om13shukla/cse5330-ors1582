@@ -20,11 +20,9 @@ body
                     .clearfix
                 div(style="padding:2%")
                     div(ng-repeat="emp in emps track by $index" style="position: relative;" )
-                        div(class="card" ng-hide="show[]" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
-                            h3(align="center" style="border-bottom: 2px solid #888") 
-                                    Name: {{emp.Name}}
-                            h5  Employee Number: {{emp.empno}} 
-                            h5  Region: {{emp.region}} | Weekly Average: {{emp.avg}}
+                        div(class="anm-rept" ng-hide="" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
+                            h7 strong Name: {{emp.Name}}
+                            h7  Employee Number: {{emp.empno}} | Region: {{emp.region}} | Weekly Average: {{emp.avg}}
                        
                 
                 br
