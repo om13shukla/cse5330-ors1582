@@ -20,7 +20,7 @@ body
                     .clearfix
                 div(style="padding:2%")
                     div(class="slide" ng-repeat="emp in emps track by $index" style="position: relative;" )
-                        div(ng-hide="show[{{$index}}] " ng-hide="" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
+                        div(ng-hide="show[{{$index}}]" style="background:#ddd;border-bottom:3px solid #fff;word-wrap:break-word; top:0px;position: relative;")
                             h7 
                                 strong [{{$index}}]
                                     Name: {{emp.Name}}
