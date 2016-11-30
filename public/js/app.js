@@ -109,7 +109,7 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
             var l=$scope.emps.length;
              if( l>20){
                     $scope.emps.slice(0,-1);
-                    $scope.show[(l+1)]=true
+                    $scope.show[(l)]=true
                     
              }
             var sd=false;
@@ -130,7 +130,8 @@ app.animation('.slide', function () {
     return {
         enter: function (element, done) {
           console.log('enter');
-            element.hide().slideDown(500, done);
+            element.hide().slideDown(600, done);
+            element.style.color()
         },
         move: function(element, done) {
             console.log('move');
@@ -139,7 +140,10 @@ app.animation('.slide', function () {
         leave: function(element, done) {
           console.log('slide up', element.text())
             element.slideUp(500, done);
-        }
+        },
+        active: function(element, done) {
+          console.log('slide up', element.text())
+            element.style.color("blue);
     };
     
 });
