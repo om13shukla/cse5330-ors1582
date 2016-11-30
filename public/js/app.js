@@ -106,13 +106,15 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
             $http.post('http://cse5335-ors1582.herokuapp.com/api/emps/findOne',fparam).then(handleSuccess, handleError);
     }
      function handleSuccess(res) {
-             if($scope.emps.length >20){
+            var l=$scope.emps.length;
+             if( l>20){
                     $scope.emps.slice(0,-1);
+                    $scope.show[(l+1)]=true
                     
              }
             var sd=false;
             $scope.emps.splice(0, 0, res.data);
-                    
+            $scope.show.push(sd);        
             $scope.premsg41 = res.data;
         }
 
