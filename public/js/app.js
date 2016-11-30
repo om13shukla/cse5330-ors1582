@@ -131,7 +131,7 @@ app.animation('.slide', function () {
         enter: function (element, done) {
           console.log('entering new row');
             element.hide().slideDown(600, done);
-            element.css('opacity',0);
+            element.css('color',123);
             jQuery(element).animate({opacity: 1}, done);
         },
         move: function(element, done) {
