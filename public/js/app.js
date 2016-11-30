@@ -122,5 +122,23 @@ app.controller('myCtrl4', function($scope, $http,$interval) {
             $scope.premsg41 = res.data;
             return res;
         }
+
+    app.animation('.slide', function () {
+    return {
+        enter: function (element, done) {
+          console.log('enter');
+            element.hide().slideDown(500, done);
+        },
+        move: function(element, done) {
+            console.log('move');
+            element.slideUp(500, done);
+        },
+        leave: function(element, done) {
+          console.log('slide up', element.text())
+            element.slideUp(500, done);
+        }
+    };
+    
+});
 });
     
